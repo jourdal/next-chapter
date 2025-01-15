@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import CopyText from '@/components/CopyText.vue';
-import instagramIcon from '@/assets/svg/icons8-instagram.svg';
-import snapchatIcon from '@/assets/svg/icons8-snapchat.svg';
-import mailIcon from '@/assets/svg/icons8-mail.svg';
+import CopyText from '~/components/CopyText.vue';
+import instagramIcon from 'assets/svg/icons8-instagram.svg';
+import snapchatIcon from 'assets/svg/icons8-snapchat.svg';
+import mailIcon from 'assets/svg/icons8-mail.svg';
 
 </script>
 
