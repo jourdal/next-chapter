@@ -10,5 +10,10 @@ export default defineNuxtConfig({
       ]
     },
     baseURL: process.env.BASE_URL || '/',
-  }
+  },
+  nitro: {
+    output: {
+      dir: 'dist',
+    },
+  },
 })
