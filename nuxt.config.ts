@@ -6,17 +6,10 @@ export default defineNuxtConfig({
   app: {
     head: {
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        { rel: 'icon', type: 'image/x-icon', href: (process.env.NODE_ENV === 'production' ? process.env.BASE_URL : '/') + 'favicon.ico' },
       ]
     },
-    baseURL: process.env.BASE_URL || '/',
-  },
-  nitro: {
-    output: {
-      dir: 'dist',
-    },
-  },
-  router: {
-    base: '/next-chapter/',
-  },
+    baseURL: process.env.NODE_ENV === 'production' ? process.env.BASE_URL : '/',
+    cdnURL: process.env.NODE_ENV === 'production' ? process.env.CDN_URL : '/'
+  }
 })
