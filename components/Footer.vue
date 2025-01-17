@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import CopyText from '~/components/CopyText.vue';
-import instagramIcon from 'assets/svg/icons8-instagram.svg';
-import snapchatIcon from 'assets/svg/icons8-snapchat.svg';
-import mailIcon from 'assets/svg/icons8-mail.svg';
 
+const instagramIcon = '/svg/icons8-instagram.svg';
+const snapchatIcon = '/svg/icons8-snapchat.svg';
+const mailIcon = '/svg/icons8-mail.svg';
 </script>
 
 <template>

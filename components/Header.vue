@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { NuxtLink } from '#components';
-import logo from 'assets/logo_no_background.png';
+import logo from 'public/logo_no_background.png';
 
 </script>
 
