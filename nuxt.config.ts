@@ -1,3 +1,7 @@
+console.log('NODE_ENV:', process.env.NODE_ENV);
+console.log('BASE_URL:', process.env.BASE_URL);
+console.log('CDN_URL:', process.env.CDN_URL);
+
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
