@@ -16,4 +16,7 @@ export default defineNuxtConfig({
       dir: 'dist',
     },
   },
+  router: {
+    base: '/next-chapter/',
+  },
 })
