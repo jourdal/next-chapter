@@ -1,7 +1,4 @@
-console.log('NODE_ENV:', process.env.NODE_ENV);
-console.log('BASE_URL:', process.env.BASE_URL);
-console.log('CDN_URL:', process.env.CDN_URL);
-
+// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
@@ -10,10 +7,8 @@ export default defineNuxtConfig({
   app: {
     head: {
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: (process.env.NODE_ENV === 'production' ? process.env.BASE_URL : '/') + 'favicon.ico' },
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       ]
-    },
-    baseURL: process.env.NODE_ENV === 'production' ? process.env.BASE_URL : '/',
-    cdnURL: process.env.NODE_ENV === 'production' ? process.env.CDN_URL : '/'
+    }
   }
 })
