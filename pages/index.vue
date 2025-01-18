@@ -3,7 +3,7 @@
 
 <template>
   <div class="container">
-    <iframe :src="`https://www.instagram.com/p/DESEDPBNUHh/embed`" width="400" height="480" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+    <iframe class="" :src="`https://www.instagram.com/p/DESEDPBNUHh/embed`" width="400" height="480" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
   </div>
 </template>
 
@@ -13,5 +13,13 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  justify-content: center;
+  height: 100vh;
+
+  iframe {
+    border: 0;
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+  }
 }
 </style>

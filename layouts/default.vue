@@ -18,9 +18,9 @@ import Footer from '~/components/Footer.vue';
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-}
 
-.content {
-  flex: 1;
+  .content {
+    flex: 1;
+  }
 }
 </style>
