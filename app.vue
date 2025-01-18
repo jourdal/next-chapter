@@ -3,6 +3,9 @@
 
 <template>
   <div>
+    <Head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+    </Head>
     <NuxtLayout>
       <NuxtPage class="nuxt-page" />
     </NuxtLayout>
@@ -16,5 +19,4 @@
   align-items: center;
   flex: 1;
 }
-
 </style>
