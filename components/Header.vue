@@ -8,7 +8,7 @@ import logo from 'public/logo_no_background.png';
   <header class="header">
     <div class="logo">
       <img :src="logo" alt="Logo" />
-      <h1>NextChapter</h1>
+      <h2>NextChapter</h2>
     </div>
     <div class="navigation">
       <nav>
@@ -25,15 +25,16 @@ import logo from 'public/logo_no_background.png';
 <style scoped>
 .header {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+  gap: 1rem;
 
   .logo {
     display: flex;
     align-items: center;
 
     img {
-      width: 14%;
+      width: 12%;
       height: auto;
     }
   }
@@ -52,7 +53,7 @@ import logo from 'public/logo_no_background.png';
       a {
         text-decoration: none;
         color: inherit;
-        font-size: 1.5rem;
+        font-size: 1.25rem;
       }
     }
   }
