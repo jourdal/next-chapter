@@ -57,16 +57,4 @@ import logo from 'public/logo_no_background.png';
     }
   }
 }
-
-@media (max-width: 600px) {
-  .header {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .navigation .link-container {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-}
 </style>

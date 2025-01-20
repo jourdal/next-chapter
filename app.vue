@@ -14,15 +14,9 @@
 
 <style scoped>
 .nuxt-page {
-  align-items: center;
   display: flex;
   flex-direction: column;
+  align-items: center;
   flex: 1;
-}
-
-@media (max-width: 600px) {
-  .nuxt-page {
-    padding: 1rem;
-  }
 }
 </style>
