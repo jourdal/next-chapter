@@ -12,7 +12,6 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
     font-family: 'Open Sans', sans-serif;
-    border: 5px solid red; /* Temporary visual indicator */
 }
 
 @font-face {
