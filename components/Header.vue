@@ -33,8 +33,8 @@ import logo from 'public/logo_no_background.png';
     align-items: center;
 
     img {
-      width: 96px;
-      height: 96px;
+      width: 14%;
+      height: auto;
     }
   }
 
