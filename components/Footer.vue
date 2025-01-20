@@ -47,5 +47,18 @@ const mailIcon = '/svg/icons8-mail.svg';
       text-decoration: none;
     }
   }
+
+  @media (max-width: 600px) {
+  .footer {
+    flex-direction: column;
+    align-items: center;
+
+    .link-container {
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+  }
+
+}
 }
 </style>

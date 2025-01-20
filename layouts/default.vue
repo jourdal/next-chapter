@@ -23,4 +23,10 @@ import Footer from '~/components/Footer.vue';
     flex: 1;
   }
 }
+
+@media (max-width: 600px) {
+  .layout-container {
+    padding: 1rem;
+  }
+}
 </style>
