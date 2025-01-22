@@ -76,4 +76,22 @@ input:checked + .slider {
 input:checked + .slider:before {
   transform: translateX(20px);
 }
+
+@media (max-width: 600px) {
+  .switch {
+    width: 22.5px; /* 50% of 45px */
+    height: 13px;  /* 50% of 26px */
+  }
+
+  .slider:before {
+    width: 10px;  /* 50% of 20px */
+    height: 10px; /* 50% of 20px */
+    left: 1.5px;  /* 50% of 3px */
+    bottom: 1.5px; /* 50% of 3px */
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(10px); /* 50% of 20px */
+  }
+}
 </style>
