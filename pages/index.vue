@@ -25,8 +25,8 @@
 
 @media (max-width: 600px) {
   .instagram-video {
-    width: 200px;
-    height: 240px;
+    width: 300px;
+    height: 360px;
   }
 }
 </style>
