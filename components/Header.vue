@@ -25,7 +25,7 @@ import logo from 'public/logo_no_background.png';
 <style scoped>
 .header {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   gap: 1rem;
 
@@ -34,7 +34,7 @@ import logo from 'public/logo_no_background.png';
     align-items: center;
 
     img {
-      width: 12%;
+      width: 80px;
       height: auto;
     }
   }
