@@ -60,6 +60,9 @@ import logo from 'public/logo_no_background.png';
 }
 
 @media (max-width: 600px) {
+  .header {
+    justify-content: space-between;
+  }
   .logo img {
     width: 40px !important;
   }

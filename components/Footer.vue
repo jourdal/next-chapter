@@ -49,6 +49,10 @@ const mailIcon = '/svg/icons8-mail.svg';
 }
 
 @media (max-width: 600px) {
+  .footer {
+    justify-content: space-between;
+  }
+
   img {
     width: 24px;
     height: 24px;
