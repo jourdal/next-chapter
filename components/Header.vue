@@ -17,7 +17,7 @@ import logo from 'public/logo_no_background.png';
           <li><NuxtLink to="/newsletter">Newsletter</NuxtLink></li>
         </ul>
       </nav>
-      <DarkModeToggle/>
+      <DarkModeToggle class="toggle"/>
     </div>
   </header>
 </template>
@@ -59,8 +59,8 @@ import logo from 'public/logo_no_background.png';
 }
 
 @media (max-width: 600px) {
-  img {
-    width: 40px;
+  .logo img {
+    width: 40px !important;
   }
 
   h2 {
@@ -68,7 +68,11 @@ import logo from 'public/logo_no_background.png';
   }
 
   a {
-    font-size: 0.625rem;
+    font-size: 0.625rem !important;
+  }
+
+  .toggle {
+    transform: scale(0.5);
   }
 }
 </style>
