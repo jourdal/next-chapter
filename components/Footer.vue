@@ -16,7 +16,7 @@ const mailIcon = '/svg/icons8-mail.svg';
     </div>
     <div class="link-container">
       <img :src="mailIcon" alt="Mail" />
-      <CopyText text="Contact@nextchapter.space" />
+      <CopyText class="copy-text" text="Contact@nextchapter.space" />
     </div>
     <div class="link-container">
       <NuxtLink class="link" to="https://www.snapchat.com/add/VentureVeb">
@@ -49,9 +49,13 @@ const mailIcon = '/svg/icons8-mail.svg';
 }
 
 @media (max-width: 600px) {
-  .footer {
-    flex-direction: column;
-    align-items: start;
+  img {
+    width: 24px;
+    height: 24px;
+  }
+
+  a, .copy-text {
+    font-size: 0.625rem !important;
   }
 }
 </style>
