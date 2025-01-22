@@ -5,17 +5,19 @@ import logo from 'public/logo_no_background.png';
 
 <template>
   <header class="header">
-    <div class="logo">
-      <img :src="logo" alt="Logo" />
-      <h2>NextChapter</h2>
-    </div>
-    <div class="navigation">
+    <div class="left">
+      <div class="logo">
+        <img :src="logo" alt="Logo" />
+        <h2>NextChapter</h2>
+      </div>
       <nav>
         <ul class="link-container">
           <li><NuxtLink to="/">Home</NuxtLink></li>
           <li><NuxtLink to="/newsletter">Newsletter</NuxtLink></li>
         </ul>
       </nav>
+    </div>
+    <div class="right">
       <DarkModeToggle />
     </div>
   </header>
@@ -23,25 +25,23 @@ import logo from 'public/logo_no_background.png';
 
 <style scoped>
 .header {
-  display: flex;
-  justify-content: space-evenly;
   align-items: center;
+  display: flex;
 
-  .logo {
-    display: flex;
+  .left {
     align-items: center;
+    display: flex;
+    gap: 2rem;
 
-    img {
-      width: 80px;
-      height: auto;
+    .logo {
+      align-items: center;
+      display: flex;
+
+      img {
+        height: auto;
+        width: 80px;
+      }
     }
-  }
-
-  .navigation {
-    align-items: center;
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
 
     .link-container {
       display: flex;
@@ -51,36 +51,33 @@ import logo from 'public/logo_no_background.png';
       padding-left: 0;
 
       a {
-        text-decoration: none;
         color: inherit;
         font-size: 1.25rem;
+        text-decoration: none;
       }
     }
+  }
+
+
+  .right {
+    margin-left: auto;
   }
 }
 
 @media (max-width: 600px) {
-  .header {
-    justify-content: space-between;
+  .logo img {
+    width: 40px !important;
+  }
 
-    .logo img {
-      width: 40px !important;
-    }
+  h2 {
+    font-size: 1rem;
+  }
 
-    h2 {
-      font-size: 1rem;
-    }
+  .link-container {
+    gap: 0.25rem !important;
 
-    .navigation {
-      gap: 0.5rem !important;
-
-      .link-container {
-        gap: 0.25rem !important;
-      }
-
-      a {
-        font-size: 0.625rem !important;
-      }
+    a {
+      font-size: 0.625rem !important;
     }
   }
 }

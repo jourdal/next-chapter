@@ -17,10 +17,10 @@ watch(isDarkMode, (newVal) => {
 
 <template>
   <v-btn-toggle v-model="isDarkMode" @change="setTheme">
-    <v-btn value="light" size="small">
+    <v-btn class="btns" value="light" size="x-small">
       <v-icon>mdi-weather-sunny</v-icon>
     </v-btn>
-    <v-btn value="dark" size="small">
+    <v-btn class="btns" value="dark" size="x-small">
       <v-icon>mdi-weather-night</v-icon>
     </v-btn>
   </v-btn-toggle>
