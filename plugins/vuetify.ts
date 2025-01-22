@@ -4,7 +4,7 @@ import 'vuetify/styles';
 export default defineNuxtPlugin((nuxtApp) => {
     const vuetify = createVuetify({
         theme: {
-            defaultTheme: 'light',
+            defaultTheme: 'dark',
             themes: {
                 light: {
                     dark: false,
