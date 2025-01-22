@@ -39,9 +39,10 @@ import logo from 'public/logo_no_background.png';
   }
 
   .navigation {
-    display: flex;
     align-items: center;
+    display: flex;
     gap: 1rem;
+    justify-content: center;
 
     .link-container {
       list-style: none;
@@ -67,12 +68,16 @@ import logo from 'public/logo_no_background.png';
     font-size: 1rem;
   }
 
-  a {
-    font-size: 0.625rem !important;
-  }
+  .navigation {
+    gap: 0.5rem !important;
 
-  .toggle {
-    transform: scale(0.5);
+    .link-container {
+      gap: 0.25rem !important;
+    }
+
+    a {
+      font-size: 0.625rem !important;
+    }
   }
 }
 </style>
