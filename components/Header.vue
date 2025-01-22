@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { NuxtLink } from '#components';
 import logo from 'public/logo_no_background.png';
-
 </script>
 
 <template>
@@ -17,7 +16,7 @@ import logo from 'public/logo_no_background.png';
           <li><NuxtLink to="/newsletter">Newsletter</NuxtLink></li>
         </ul>
       </nav>
-      <DarkModeToggle class="toggle"/>
+      <DarkModeToggle />
     </div>
   </header>
 </template>
