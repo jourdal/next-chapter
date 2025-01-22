@@ -22,4 +22,11 @@
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
   }
 }
+
+@media (max-width: 600px) {
+  .instagram-video {
+    width: 200px;
+    height: 240px;
+  }
+}
 </style>
