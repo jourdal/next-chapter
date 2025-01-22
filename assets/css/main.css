@@ -1,4 +1,6 @@
 :root {
+    --header-height: 80px;
+    --footer-height: 50px;
     --background-color: #ffffff;
     --text-color: #000000;
 }

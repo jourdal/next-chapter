@@ -32,7 +32,6 @@ const mailIcon = '/svg/icons8-mail.svg';
   align-items: center;
   display: flex;
   justify-content: space-evenly;
-  margin-bottom: 1rem;
 
   .link-container {
     display: flex;

@@ -21,6 +21,7 @@ import Footer from '~/components/Footer.vue';
 
   .content {
     flex: 1;
+    max-height: calc(100vh - var(--header-height) - var(--footer-height));
   }
 }
 </style>
