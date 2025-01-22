@@ -14,7 +14,7 @@
   flex-direction: column;
   gap: 1rem;
   justify-content: center;
-  height: 100vh;
+  height: calc(100vh - var(--header-height) - var(--footer-height));
 
   .instagram-video {
     border: 0;
