@@ -51,7 +51,7 @@ const mailIcon = '/svg/icons8-mail.svg';
 @media (max-width: 600px) {
   .footer {
     flex-direction: column;
-    justify-content: start;
+    align-items: start;
   }
 }
 </style>
