@@ -54,6 +54,10 @@ const mailIcon = '/svg/icons8-mail.svg';
     height: 24px;
   }
 
+  .link-container, .link {
+    gap: 0.125rem;
+  }
+
   a, .copy-text {
     font-size: 0.625rem !important;
   }
