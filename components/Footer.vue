@@ -51,19 +51,19 @@ const mailIcon = '/svg/icons8-mail.svg';
 @media (max-width: 600px) {
   .footer {
     justify-content: space-between;
-  }
 
-  img {
-    width: 24px;
-    height: 24px;
-  }
+    img {
+      width: 24px;
+      height: 24px;
+    }
 
-  .link-container, .link {
-    gap: 0.125rem;
-  }
+    .link-container, .link {
+      gap: 0.125rem;
 
-  a, .copy-text {
-    font-size: 0.625rem !important;
+      a, .copy-text {
+        font-size: 0.625rem !important;
+      }
+    }
   }
 }
 </style>

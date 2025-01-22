@@ -45,9 +45,10 @@ import logo from 'public/logo_no_background.png';
     justify-content: center;
 
     .link-container {
-      list-style: none;
       display: flex;
+      flex-direction: row;
       gap: 1rem;
+      list-style: none;
       padding-left: 0;
 
       a {
@@ -62,24 +63,25 @@ import logo from 'public/logo_no_background.png';
 @media (max-width: 600px) {
   .header {
     justify-content: space-between;
-  }
-  .logo img {
-    width: 40px !important;
-  }
 
-  h2 {
-    font-size: 1rem;
-  }
-
-  .navigation {
-    gap: 0.5rem !important;
-
-    .link-container {
-      gap: 0.25rem !important;
+    .logo img {
+      width: 40px !important;
     }
 
-    a {
-      font-size: 0.625rem !important;
+    h2 {
+      font-size: 1rem;
+    }
+
+    .navigation {
+      gap: 0.5rem !important;
+
+      .link-container {
+        gap: 0.25rem !important;
+      }
+
+      a {
+        font-size: 0.625rem !important;
+      }
     }
   }
 }
