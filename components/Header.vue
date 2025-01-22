@@ -65,19 +65,23 @@ import logo from 'public/logo_no_background.png';
 }
 
 @media (max-width: 600px) {
-  .logo img {
-    width: 40px !important;
-  }
+  .left {
+    gap: 1rem !important;
 
-  h2 {
-    font-size: 1rem;
-  }
+    .logo img {
+      width: 40px !important;
+    }
 
-  .link-container {
-    gap: 0.25rem !important;
+    h2 {
+      font-size: 1rem;
+    }
 
-    a {
-      font-size: 0.625rem !important;
+    .link-container {
+      gap: 0.25rem !important;
+
+      a {
+        font-size: 0.625rem !important;
+      }
     }
   }
 }
