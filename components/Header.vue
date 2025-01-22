@@ -27,11 +27,9 @@ import logo from 'public/logo_no_background.png';
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  gap: 1rem;
 
   .logo {
     display: flex;
-    align-items: center;
 
     img {
       width: 80px;
@@ -56,6 +54,20 @@ import logo from 'public/logo_no_background.png';
         font-size: 1.25rem;
       }
     }
+  }
+}
+
+@media (max-width: 600px) {
+  .logo img {
+    width: 40px;
+  }
+
+  .logo h2 {
+    font-size: 1rem;
+  }
+
+  .link-container a {
+    font-size: 0.75rem;
   }
 }
 </style>
