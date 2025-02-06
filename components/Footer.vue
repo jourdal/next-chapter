@@ -1,5 +1,5 @@
 <template>
-  <VFooter>
+  <VFooter app>
     <VRow class="footer">
       <VCol class="link-container left">
         <NuxtLink class="link" to="https://www.instagram.com/VentureVeb">
