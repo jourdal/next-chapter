@@ -1,27 +1,18 @@
-<script setup lang="ts">
-import Header from '~/components/Header.vue';
-import Footer from '~/components/Footer.vue';
-</script>
-
 <template>
-  <div class="layout-container">
+  <VApp>
     <Header />
-    <div class="content">
-      <slot />
-    </div>
+      <VMain class="layout-container">
+        <VContainer class="content">
+          <slot />
+        </VContainer>
+      </VMain>
     <Footer />
-  </div>
+  </VApp>
 </template>
 
 <style scoped>
 .layout-container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-
-  .content {
-    flex: 1;
-    max-height: calc(100vh - var(--header-height) - var(--footer-height));
-  }
+  height: 100%;
+  max-height: calc(100vh - var(--header-height) - var(--footer-height));
 }
 </style>

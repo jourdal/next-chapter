@@ -1,26 +1,25 @@
 <script setup lang="ts">
-import { NuxtLink } from '#components';
 import logo from 'public/logo_no_background.png';
 </script>
 
 <template>
-  <header class="header">
-    <div class="left">
-      <div class="logo">
-        <img :src="logo" alt="Logo" />
-        <h2>NextChapter</h2>
-      </div>
-      <nav>
-        <ul class="link-container">
-          <li><NuxtLink to="/">Home</NuxtLink></li>
-          <li><NuxtLink to="/newsletter">Newsletter</NuxtLink></li>
-        </ul>
-      </nav>
-    </div>
-    <div class="right">
-      <DarkModeToggle />
-    </div>
-  </header>
+  <VAppBar app>
+    <VRow class="header">
+      <VCol class="left">
+        <div class="logo-title">
+          <img class="logo" :src="logo" alt="Logo" />
+          <v-app-bar-title class="title">NextChapter</v-app-bar-title>
+        </div>
+        <div class="links-group">
+          <NuxtLink class="link" to="/">Home</NuxtLink>
+          <NuxtLink class="link" to="/newsletter">Newsletter</NuxtLink>
+        </div>
+      </VCol>
+      <VCol class="right">
+        <DarkModeToggle class="toggle" />
+      </VCol>
+    </VRow>
+  </VAppBar>
 </template>
 
 <style scoped>
@@ -33,34 +32,37 @@ import logo from 'public/logo_no_background.png';
     display: flex;
     gap: 2rem;
 
-    .logo {
-      align-items: center;
+    .logo-title {
       display: flex;
+      align-items: center;
 
-      img {
+      .logo {
         height: auto;
-        width: 80px;
+        width: 60px;
+      }
+
+      .title {
+        font-size: 1.5rem;
+        font-weight: bold;
       }
     }
 
-    .link-container {
+    .links-group {
+      align-items: center;
       display: flex;
-      flex-direction: row;
-      gap: 1rem;
-      list-style: none;
-      padding-left: 0;
 
-      a {
+      .link {
         color: inherit;
-        font-size: 1.25rem;
         text-decoration: none;
+        padding: 0 1rem;
       }
     }
   }
 
-
   .right {
-    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
   }
 }
 
@@ -68,21 +70,22 @@ import logo from 'public/logo_no_background.png';
   .left {
     gap: 1rem !important;
 
-    .logo img {
-      width: 40px !important;
+    .logo {
+      width: 30px !important;
     }
 
-    h2 {
-      font-size: 1rem;
+    .title {
+      font-size: 0.75rem !important;
     }
 
-    .link-container {
-      gap: 0.25rem !important;
-
-      a {
-        font-size: 0.625rem !important;
-      }
+    .link {
+      font-size: 0.5rem !important;
+      padding: 0 0.5rem !important;
     }
+  }
+
+  .toggle {
+    transform: scale(0.5);
   }
 }
 </style>

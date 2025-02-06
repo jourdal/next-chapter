@@ -3,6 +3,10 @@ const props = defineProps({
   text: {
     type: String,
     required: true
+  },
+  icon: {
+    type: String,
+    required: false
   }
 });
 
@@ -17,7 +21,10 @@ const copyText = async () => {
 </script>
 
 <template>
-  <span @click="copyText" class="copy-text">{{ text }}</span>
+  <span @click="copyText" class="copy-text">
+    <VIcon v-if="icon" class="icon">{{ icon }}</VIcon>
+    {{ text }}
+  </span>
 </template>
 
 <style scoped>
@@ -25,5 +32,9 @@ const copyText = async () => {
   align-items: center;
   display: flex;
   cursor: pointer;
+}
+
+.icon {
+  margin-right: 0.5rem;
 }
 </style>
