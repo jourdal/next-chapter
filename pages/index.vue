@@ -2,9 +2,9 @@
 </script>
 
 <template>
-  <div class="container">
+  <VContainer class="container">
     <iframe class="instagram-video" :src="`https://www.instagram.com/p/DESEDPBNUHh/embed`" width="400" height="480" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
-  </div>
+  </VContainer>
 </template>
 
 <style scoped>
