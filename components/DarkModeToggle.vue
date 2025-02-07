@@ -25,11 +25,7 @@ onMounted(() => {
 
 <template>
   <v-btn-toggle v-model="isDarkMode">
-    <v-btn value="light" size="x-small" @click="setTheme('light')">
-      <v-icon>mdi-weather-sunny</v-icon>
-    </v-btn>
-    <v-btn value="dark" size="x-small" @click="setTheme('dark')">
-      <v-icon>mdi-weather-night</v-icon>
-    </v-btn>
+    <v-btn icon="mdi-weather-sunny" value="light" size="x-small" @click="setTheme('light')" />
+    <v-btn icon="mdi-weather-night" value="dark" size="x-small" @click="setTheme('dark')" />
   </v-btn-toggle>
 </template>
