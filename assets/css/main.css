@@ -3,6 +3,11 @@
     --footer-height: 48px;
 }
 
+html {
+    overscroll-behavior: none;
+}
+
 body {
     font-family: 'Open Sans', sans-serif;
+    overscroll-behavior: none;
 }
