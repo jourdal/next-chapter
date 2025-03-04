@@ -1,11 +1,16 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
+import { validateEmail } from '~/utils/validateEmail';
 
 const mail = ref('');
 
+const isEmailValid = computed(() => validateEmail(mail.value));
+
 const signUp = () => {
-  console.log('Signed up with email:', mail.value);
-  alert('Du er nå på listen! 🚀');
+  if (isEmailValid.value) {
+    console.log('Signed up with email:', mail.value);
+    alert('Du er nå på listen! 🚀');
+  }
 };
 </script>
 
@@ -22,7 +27,7 @@ const signUp = () => {
       </ul>
     </div>
     <input v-model="mail" type="email" placeholder="perodd.tessem@gmail.com" class="text-field" />
-    <VBtn variant="tonal" @click="signUp">Meld deg på</VBtn>
+    <VBtn variant="tonal" @click="signUp" :disabled="!isEmailValid">Meld deg på</VBtn>
   </VContainer>
 </template>
 
