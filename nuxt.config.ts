@@ -26,11 +26,4 @@ export default defineNuxtConfig({
       ]
     }
   },
-  buildModules: [
-    '@nuxt/typescript-build',
-  ],
-  typescript: {
-    typeCheck: true,
-    ignoreNotFoundWarnings: true,
-  },
 })
