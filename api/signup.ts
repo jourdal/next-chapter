@@ -2,7 +2,13 @@ import { VercelRequest, VercelResponse } from '@vercel/node';
 import sgMail from '@sendgrid/mail';
 import { kv } from '@vercel/kv';
 
-sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+const sendGridApiKey = process.env.SENDGRID_API_KEY;
+
+if (!sendGridApiKey) {
+    throw new Error('SENDGRID_API_KEY is not defined');
+}
+
+sgMail.setApiKey(sendGridApiKey);
 
 export default async (req: VercelRequest, res: VercelResponse) => {
     if (req.method === 'POST') {
