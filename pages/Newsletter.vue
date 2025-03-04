@@ -6,10 +6,27 @@ const mail = ref('');
 
 const isEmailValid = computed(() => validateEmail(mail.value));
 
-const signUp = () => {
+const signUp = async () => {
   if (isEmailValid.value) {
-    console.log('Signed up with email:', mail.value);
-    alert('Du er nå på listen! 🚀');
+    try {
+      const response = await fetch('/api/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email: mail.value }),
+      });
+
+      if (response.ok) {
+        console.log('Signed up with email:', mail.value);
+        alert('Du er nå på listen! 🚀');
+      } else {
+        const errorData = await response.json();
+        console.error('Error signing up:', errorData.error);
+      }
+    } catch (error) {
+      console.error('Error signing up:', error);
+    }
   }
 };
 </script>

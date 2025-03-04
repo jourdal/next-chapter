@@ -8,7 +8,7 @@
         </NuxtLink>
       </VCol>
       <VCol class="link-container middle">
-        <CopyText class="copy-text" text="Contact@nextchapter.space" icon="mdi-email"/>
+        <CopyText class="copy-text" text="contact@nextchapter.space" icon="mdi-email"/>
       </VCol>
       <VCol class="link-container right">
         <NuxtLink class="link" to="https://www.snapchat.com/add/VentureVeb">
