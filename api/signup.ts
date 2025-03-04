@@ -10,7 +10,7 @@ if (!sendGridApiKey) {
 
 sgMail.setApiKey(sendGridApiKey);
 
-export default async (req: VercelRequest, res: VercelResponse) => {
+const handler = async (req: VercelRequest, res: VercelResponse) => {
     if (req.method === 'POST') {
         const { email } = req.body;
 
@@ -39,3 +39,5 @@ export default async (req: VercelRequest, res: VercelResponse) => {
         res.status(405).json({ error: 'Method not allowed' });
     }
 };
+
+export default handler;
