@@ -35,10 +35,10 @@ const menu = ref(false);
   <VNavigationDrawer v-model="drawer" app>
     <VList>
       <VListItem>
-        <NuxtLink to="/">Home</NuxtLink>
+        <NuxtLink to="/">Forside</NuxtLink>
       </VListItem>
       <VListItem>
-        <NuxtLink to="/newsletter">Newsletter</NuxtLink>
+        <NuxtLink to="/newsletter">Nyhetsbrev</NuxtLink>
       </VListItem>
     </VList>
   </VNavigationDrawer>
