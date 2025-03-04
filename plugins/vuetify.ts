@@ -20,7 +20,7 @@ export default defineNuxtPlugin((nuxtApp) => {
                         warning: '#FFC107',
                     },
                     variables: {
-                        fontFamily: 'Open Sans, sans-serif',
+                        fontFamily: 'Inter, sans-serif',
                     },
                 },
                 dark: {
@@ -37,7 +37,7 @@ export default defineNuxtPlugin((nuxtApp) => {
                         warning: '#FFC107',
                     },
                     variables: {
-                        fontFamily: 'Open Sans, sans-serif',
+                        fontFamily: 'Inter, sans-serif',
                     },
                 },
             },
