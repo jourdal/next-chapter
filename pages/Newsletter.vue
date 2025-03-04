@@ -1,19 +1,61 @@
 <script setup lang="ts">
+import { ref } from 'vue';
+
+const mail = ref('');
+
+const signUp = () => {
+  console.log('Signed up with email:', mail.value);
+  alert('Du er nå på listen! 🚀');
+};
 </script>
 
 <template>
   <VContainer class="container">
-    NEWSLETTER
+    <h3 class="title">Bli med på eventyret – ukentlige oppdateringer rett i innboksen!</h3>
+    <p>Vi utforsker startup-muligheter, sidehustles og nye måter å skape et enklere og bedre liv på, sammen.</p>
+    <div>
+      <h4>Hver uke deler jeg:</h4>
+      <ul>
+        <li class="text">Eksklusive innsikter fra prosjektene jeg bygger</li>
+        <li class="text">Lærdommer og utfordringer fra startup-livet</li>
+        <li class="text">Muligheten til å bli med på prosjektene – hvis du vil!</li>
+      </ul>
+    </div>
+    <input v-model="mail" type="email" placeholder="perodd.tessem@gmail.com" class="text-field" />
+    <VBtn variant="tonal" @click="signUp">Meld deg på</VBtn>
   </VContainer>
 </template>
 
 <style scoped>
 .container {
-  align-items: center;
   display: flex;
   flex-direction: column;
   gap: 1rem;
   justify-content: center;
   height: calc(100vh - var(--header-height) - var(--footer-height));
+
+  .title {
+    padding-bottom: 1rem;
+  }
+
+  .text {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .text-field {
+    width: 100%;
+    max-width: 400px;
+    padding: 0.5rem 0;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+
+    &:focus {
+      border-bottom: 2px solid #D83E4E;
+    }
+  }
 }
 </style>
