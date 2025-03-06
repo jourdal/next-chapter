@@ -3,10 +3,17 @@ import sgMail from '@sendgrid/mail';
 import { kv } from '@vercel/kv';
 
 const sendGridApiKey = process.env.SENDGRID_API_KEY;
+const kvRestApiUrl = process.env.KV_REST_API_URL;
+const kvRestApiToken = process.env.KV_REST_API_TOKEN;
 
 if (!sendGridApiKey) {
     console.error('SENDGRID_API_KEY is not defined');
     throw new Error('SENDGRID_API_KEY is not defined');
+}
+
+if (!kvRestApiUrl || !kvRestApiToken) {
+    console.error('KV_REST_API_URL or KV_REST_API_TOKEN is not defined');
+    throw new Error('KV_REST_API_URL or KV_REST_API_TOKEN is not defined');
 }
 
 sgMail.setApiKey(sendGridApiKey);
@@ -44,7 +51,7 @@ export default eventHandler(async (event: H3Event) => {
         try {
             await sgMail.send(msg);
             console.log('Confirmation email sent successfully:', email);
-            return send(event, { message: 'Subscription successful' });
+            return send(event, JSON.stringify({ message: 'Subscription successful' }));
         } catch (error) {
             console.error('Error sending email:', error);
             throw createError({ statusCode: 500, statusMessage: 'Error sending email' });
