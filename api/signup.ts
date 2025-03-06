@@ -5,14 +5,24 @@ import { kv } from '@vercel/kv';
 const sendGridApiKey = process.env.SENDGRID_API_KEY;
 
 if (!sendGridApiKey) {
+    console.error('SENDGRID_API_KEY is not defined');
     throw new Error('SENDGRID_API_KEY is not defined');
 }
 
 sgMail.setApiKey(sendGridApiKey);
 
 const handler = async (req: VercelRequest, res: VercelResponse) => {
+    console.log('Handler invoked');
+    console.log('Request method:', req.method);
+
     if (req.method === 'POST') {
         const { email } = req.body;
+        console.log('Request body:', req.body);
+
+        if (!email) {
+            console.error('Email is missing in the request body');
+            return res.status(400).json({ error: 'Email is required' });
+        }
 
         // Save the email to Vercel KV
         try {
