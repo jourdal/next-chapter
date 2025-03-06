@@ -1,4 +1,4 @@
-import { VercelRequest, VercelResponse } from '@vercel/node';
+import { eventHandler, readBody, H3Event, createError, send } from 'h3';
 import sgMail from '@sendgrid/mail';
 import { kv } from '@vercel/kv';
 
@@ -11,17 +11,17 @@ if (!sendGridApiKey) {
 
 sgMail.setApiKey(sendGridApiKey);
 
-const handler = async (req: VercelRequest, res: VercelResponse) => {
+export default eventHandler(async (event: H3Event) => {
     console.log('Handler invoked');
-    console.log('Request method:', req.method);
+    console.log('Request method:', event.node.req.method);
 
-    if (req.method === 'POST') {
-        const { email } = req.body;
-        console.log('Request body:', req.body);
+    if (event.node.req.method === 'POST') {
+        const { email } = await readBody(event);
+        console.log('Request body:', { email });
 
         if (!email) {
             console.error('Email is missing in the request body');
-            return res.status(400).json({ error: 'Email is required' });
+            throw createError({ statusCode: 400, statusMessage: 'Email is required' });
         }
 
         // Save the email to Vercel KV
@@ -30,7 +30,7 @@ const handler = async (req: VercelRequest, res: VercelResponse) => {
             console.log('Email stored successfully:', email);
         } catch (error) {
             console.error('Error storing email:', error);
-            return res.status(500).json({ error: 'Error storing email' });
+            throw createError({ statusCode: 500, statusMessage: 'Error storing email' });
         }
 
         // Send a confirmation email
@@ -44,14 +44,12 @@ const handler = async (req: VercelRequest, res: VercelResponse) => {
         try {
             await sgMail.send(msg);
             console.log('Confirmation email sent successfully:', email);
-            res.status(200).json({ message: 'Subscription successful' });
+            return send(event, { message: 'Subscription successful' });
         } catch (error) {
             console.error('Error sending email:', error);
-            res.status(500).json({ error: 'Error sending email' });
+            throw createError({ statusCode: 500, statusMessage: 'Error sending email' });
         }
     } else {
-        res.status(405).json({ error: 'Method not allowed' });
+        throw createError({ statusCode: 405, statusMessage: 'Method not allowed' });
     }
-};
-
-export default handler;
+});

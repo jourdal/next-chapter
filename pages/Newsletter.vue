@@ -17,8 +17,6 @@ const signUp = async () => {
         body: JSON.stringify({ email: mail.value }),
       });
 
-      console.log('Response: ', response);
-
       if (response.ok) {
         console.log('Signed up with email:', mail.value);
         alert('Du er nå på listen! 🚀');
