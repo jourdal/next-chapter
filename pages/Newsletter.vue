@@ -19,13 +19,13 @@ const signUp = async () => {
 
       console.log('Response: ', response);
 
-      // if (response.ok) {
-      //   console.log('Signed up with email:', mail.value);
-      //   alert('Du er nå på listen! 🚀');
-      // } else {
-      //   const errorText = await response.text();
-      //   console.error('Error signing up:', errorText);
-      // }
+      if (response.ok) {
+        console.log('Signed up with email:', mail.value);
+        alert('Du er nå på listen! 🚀');
+      } else {
+        const errorText = await response.text();
+        console.error('Error signing up:', errorText);
+      }
     } catch (error) {
       console.error('Error signing up:', error);
     }
