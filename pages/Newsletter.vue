@@ -17,13 +17,15 @@ const signUp = async () => {
         body: JSON.stringify({ email: mail.value }),
       });
 
-      if (response.ok) {
-        console.log('Signed up with email:', mail.value);
-        alert('Du er nå på listen! 🚀');
-      } else {
-        const errorData = await response.json();
-        console.error('Error signing up:', errorData.error);
-      }
+      console.log('Response: ', response);
+
+      // if (response.ok) {
+      //   console.log('Signed up with email:', mail.value);
+      //   alert('Du er nå på listen! 🚀');
+      // } else {
+      //   const errorText = await response.text();
+      //   console.error('Error signing up:', errorText);
+      // }
     } catch (error) {
       console.error('Error signing up:', error);
     }
