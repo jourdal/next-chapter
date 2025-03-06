@@ -19,6 +19,9 @@ export default defineNuxtConfig({
       vuetify({ autoImport: true }),
     ],
   },
+  nitro: {
+    preset: 'vercel',
+  },
   app: {
     head: {
       link: [
