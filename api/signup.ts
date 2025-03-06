@@ -17,7 +17,9 @@ const handler = async (req: VercelRequest, res: VercelResponse) => {
         // Save the email to Vercel KV
         try {
             await kv.set(email, true);
+            console.log('Email stored successfully:', email);
         } catch (error) {
+            console.error('Error storing email:', error);
             return res.status(500).json({ error: 'Error storing email' });
         }
 
@@ -31,8 +33,10 @@ const handler = async (req: VercelRequest, res: VercelResponse) => {
 
         try {
             await sgMail.send(msg);
+            console.log('Confirmation email sent successfully:', email);
             res.status(200).json({ message: 'Subscription successful' });
         } catch (error) {
+            console.error('Error sending email:', error);
             res.status(500).json({ error: 'Error sending email' });
         }
     } else {
