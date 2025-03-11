@@ -14,8 +14,8 @@ const copyText = async () => {
   try {
     await navigator.clipboard.writeText(props.text);
     alert('Text copied to clipboard');
-  } catch (err) {
-    console.error('Failed to copy text: ', err);
+  } catch (error) {
+    console.error('Failed to copy text: ', error);
   }
 };
 </script>

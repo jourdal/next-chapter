@@ -11,9 +11,9 @@ async function checkEmailContents() {
             emailContents[key] = values[index];
         });
 
-        console.log('Email Contents:', emailContents);
+        // console.log(emailContents);
     } catch (error) {
-        console.error('Error retrieving email contents:', error);
+
     }
 }
 

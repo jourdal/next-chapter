@@ -11,19 +11,15 @@ sgMail.setApiKey(sendGridApiKey);
 export default eventHandler(async (event: H3Event) => {
     if (event.node.req.method === 'POST') {
         const { email } = await readBody(event);
-        console.log('Request body:', { email });
 
         if (!email) {
-            console.error('Email is missing in the request body');
             throw createError({ statusCode: 400, statusMessage: 'Email is required' });
         }
 
         // Save the email to Vercel KV
         try {
             await kv.set(email, true);
-            console.log('Email stored successfully:', email);
         } catch (error) {
-            console.error('Error storing email:', error);
             throw createError({ statusCode: 500, statusMessage: 'Error storing email' });
         }
 
@@ -37,10 +33,8 @@ export default eventHandler(async (event: H3Event) => {
 
         try {
             await sgMail.send(msg);
-            console.log('Confirmation email sent successfully:', email);
             return send(event, JSON.stringify({ message: 'Subscription successful' }));
         } catch (error) {
-            console.error('Error sending email:', error);
             throw createError({ statusCode: 500, statusMessage: 'Error sending email' });
         }
     } else {

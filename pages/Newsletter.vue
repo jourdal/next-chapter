@@ -18,7 +18,6 @@ const signUp = async () => {
       });
 
       if (response.ok) {
-        console.log('Signed up with email:', mail.value);
         alert('Du er nå på listen! 🚀');
       } else {
         const errorText = await response.text();
