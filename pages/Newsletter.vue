@@ -69,7 +69,7 @@ const signUp = async () => {
     max-width: 400px;
     padding: 0.5rem 0;
     border: none;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 2px solid #ccc;
     font-size: 1rem;
     outline: none;
     transition: border-color 0.3s;
