@@ -4,7 +4,6 @@
 <template>
   <Banner />
   <VContainer class="container">
-    HOME
   </VContainer>
 </template>
 

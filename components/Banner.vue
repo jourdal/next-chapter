@@ -5,7 +5,7 @@
 <template>
   <div class="banner">
     <span>Bli med på eventyret – ukentlige oppdateringer rett i innboksen!</span>
-    <VBtn variant="tonal" href="/newsletter">Meld deg på</VBtn>
+    <VBtn variant="tonal" :to="{ path: '/newsletter' }" component="NuxtLink">Meld deg på</VBtn>
   </div>
 </template>
 
@@ -17,5 +17,6 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
+  gap: 1rem;
 }
 </style>
