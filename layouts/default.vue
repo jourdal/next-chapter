@@ -2,9 +2,7 @@
   <VApp>
     <Header />
       <VMain class="layout-container">
-        <VContainer class="content">
-          <slot />
-        </VContainer>
+        <slot />
       </VMain>
     <Footer />
   </VApp>
@@ -13,5 +11,6 @@
 <style scoped>
 .layout-container {
   max-height: calc(100vh - var(--header-height) - var(--footer-height));
+  width: 100%;
 }
 </style>
