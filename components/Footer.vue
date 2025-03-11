@@ -54,7 +54,7 @@
     gap: 0.125rem;
 
     a, .copy-text {
-      font-size: 0.625rem !important;
+      font-size: 0.5rem !important;
     }
   }
 }
