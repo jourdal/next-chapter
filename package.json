@@ -16,6 +16,7 @@
     "@vercel/kv": "^1.0.1",
     "@vercel/node": "^5.1.5",
     "nuxt": "^3.14.1592",
+    "rss-parser": "^3.13.0",
     "vue": "latest",
     "vue-router": "latest"
   },

@@ -1,9 +1,19 @@
 <script setup lang="ts">
+const { data: podcastEpisodes, error } = await useFetch('/api/podcast')
 </script>
+
 
 <template>
   <Banner />
   <VContainer class="container">
+    <div v-if="error">Noe gikk galt med lasting av podcast episoder 😢</div>
+    <div v-else>
+      <div v-for="episode in podcastEpisodes" class="episode">
+        <h3>{{ episode.title }}</h3>
+        <p>{{ episode.description }}</p>
+        <p>Publisert {{ new Date(episode.pubDate).toLocaleDateString() }}</p>
+      </div>
+    </div>
   </VContainer>
 </template>
 
