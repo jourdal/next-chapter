@@ -37,9 +37,9 @@ const signUp = async () => {
     <div>
       <h4>Hver uke deler jeg:</h4>
       <ul>
-        <li class="text">Eksklusive innsikter fra prosjektene jeg bygger</li>
-        <li class="text">Lærdommer og utfordringer fra startup-livet</li>
-        <li class="text">Muligheten til å bli med på prosjektene – hvis du vil!</li>
+        <li class="bullet-point">Eksklusive innsikter fra prosjektene jeg bygger</li>
+        <li class="bullet-point">Lærdommer og utfordringer fra startup-livet</li>
+        <li class="bullet-point">Muligheten til å bli med på prosjektene – hvis du vil!</li>
       </ul>
     </div>
     <input v-model="mail" type="email" placeholder="perodd.tessem@gmail.com" class="text-field" />
@@ -59,7 +59,11 @@ const signUp = async () => {
     padding-bottom: 1rem;
   }
 
-  .text {
+  ul {
+    list-style-position: inside;
+  }
+
+  .bullet-point {
     word-wrap: break-word;
     overflow-wrap: break-word;
   }
