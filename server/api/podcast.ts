@@ -1,15 +1,8 @@
 import { eventHandler, createError } from 'h3';
 import Parser from 'rss-parser';
+import { Episode } from '~/types/content';
 
 const parser = new Parser();
-
-interface Episode {
-    title: string;
-    contentSnippet?: string;
-    content?: string;
-    description?: string;
-    pubDate: string;
-}
 
 export default eventHandler(async (event) => {
     if (event.node.req.method === 'GET') {
@@ -26,7 +19,7 @@ export default eventHandler(async (event) => {
                 return {
                     title: episode.title,
                     description: episode.contentSnippet || episode.content || episode.description,
-                    pubDate: episode.pubDate,
+                    publishDate: episode.pubDate,
                 }
             });
         } catch (error) {

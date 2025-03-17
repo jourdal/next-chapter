@@ -1,7 +1,8 @@
 <script setup lang="ts">
+import { ContentItem } from '~/types/content';
+
 const { data: podcastEpisodes, error } = await useFetch('/api/podcast')
 </script>
-
 
 <template>
   <Banner />
@@ -11,7 +12,7 @@ const { data: podcastEpisodes, error } = await useFetch('/api/podcast')
       <div v-for="episode in podcastEpisodes" class="episode">
         <h3>{{ episode.title }}</h3>
         <p>{{ episode.description }}</p>
-        <p>Publisert {{ new Date(episode.pubDate).toLocaleDateString() }}</p>
+        <p>Publisert {{ new Date(episode.publishDate).toLocaleDateString() }}</p>
       </div>
     </div>
   </VContainer>
