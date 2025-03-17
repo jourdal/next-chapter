@@ -1,7 +1,7 @@
 export interface ContentItem {
-    type: Podcast | 'blog';
+    type: 'podcast' | 'blog';
     title: string;
-    summary: string;
+    body?: string;
     publishDate: string;
 }
 
