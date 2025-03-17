@@ -36,7 +36,11 @@ const getIcon = computed(() => {
             variant="tonal" :title="item.title"
             :subtitle="new Date(item.publishDate).toLocaleDateString()"
             :text="item.body"
-        />
+        >
+          <template #actions>
+            <VBtn v-if="item.type === 'podcast'" :href="`https://open.spotify.com/show/5HanrQebYK5aBJFeut5Gtm?si=a59bfe86c5084eaa`" variant="tonal">Lytt</VBtn>
+          </template>
+        </VCard>
       </div>
     </div>
   </VContainer>
