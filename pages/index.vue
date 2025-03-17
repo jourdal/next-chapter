@@ -56,6 +56,13 @@ const getIcon = computed(() => {
   .episode {
     width: 100%;
     margin-bottom: 1rem;
+
+  }
+}
+@media (max-width: 600px) {
+  :deep(.v-card-title) {
+    font-size: 1rem;
+    white-space: none;
   }
 }
 </style>
