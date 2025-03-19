@@ -21,20 +21,24 @@ const copyText = async () => {
 </script>
 
 <template>
-  <span @click="copyText" class="copy-text">
+  <div @click="copyText" class="container">
     <VIcon v-if="icon" class="icon">{{ icon }}</VIcon>
-    {{ text }}
-  </span>
+    <span class="text">{{ text }}</span>
+  </div>
 </template>
 
 <style scoped>
-.copy-text {
+.container {
   align-items: center;
   display: flex;
   cursor: pointer;
-}
 
-.icon {
-  margin-right: 0.5rem;
+  .icon {
+    margin-right: 0.5rem;
+  }
+
+  .text {
+    display: none;
+  }
 }
 </style>

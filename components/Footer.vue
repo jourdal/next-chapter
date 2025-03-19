@@ -4,7 +4,7 @@
       <VCol class="link-container left">
         <NuxtLink class="link" to="https://www.instagram.com/VentureVeb">
           <VIcon class="icon">mdi-instagram</VIcon>
-          VentureVeb
+          <span class="text">VentureVeb</span>
         </NuxtLink>
       </VCol>
       <VCol class="link-container middle">
@@ -13,7 +13,7 @@
       <VCol class="link-container right">
         <NuxtLink class="link" to="https://www.snapchat.com/add/VentureVeb">
           <VIcon class="icon">mdi-snapchat</VIcon>
-          VentureVeb
+          <span class="text">VentureVeb</span>
         </NuxtLink>
       </VCol>
     </VRow>
@@ -48,14 +48,9 @@
   }
 }
 
-
 @media (max-width: 600px) {
-  .link-container, .link {
-    gap: 0.125rem;
-
-    a, .copy-text {
-      font-size: 0.5rem !important;
-    }
+  .text {
+    display: none;
   }
 }
 </style>
