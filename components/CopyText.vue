@@ -36,7 +36,9 @@ const copyText = async () => {
   .icon {
     margin-right: 0.5rem;
   }
+}
 
+@media (max-width: 600px) {
   .text {
     display: none;
   }
