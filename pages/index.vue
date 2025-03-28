@@ -57,8 +57,12 @@ const getIcon = computed(() => {
     width: 100%;
     margin-bottom: 1rem;
 
+    :deep(.v-card-title) {
+      white-space: normal;
+    }
   }
 }
+
 @media (max-width: 600px) {
   :deep(.v-card-title) {
     font-size: 1rem;
