@@ -6,7 +6,7 @@ const mail = ref('');
 
 const isEmailValid = computed(() => validateEmail(mail.value));
 
-const signUp = async () => {
+const signup = async () => {
   if (isEmailValid.value) {
     try {
       const response = await fetch('/api/signup', {
@@ -45,7 +45,7 @@ const signUp = async () => {
       </ul>
     </div>
     <input v-model="mail" type="email" placeholder="perodd.tessem@gmail.com" class="text-field" />
-    <VBtn variant="tonal" @click="signUp" :disabled="!isEmailValid">Meld deg på</VBtn>
+    <VBtn variant="tonal" @click="signup" :disabled="!isEmailValid">Meld deg på</VBtn>
   </VContainer>
 </template>
 
