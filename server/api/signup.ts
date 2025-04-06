@@ -16,6 +16,12 @@ export default eventHandler(async (event: H3Event) => {
             throw createError({ statusCode: 400, statusMessage: 'Email is required' });
         }
 
+        // Check if the email is already signed up
+        const isSignedUp = await kv.get(email);
+        if (isSignedUp) {
+            throw createError({ statusCode: 422, statusMessage: 'Email is already registered' });
+        }
+
         // Save the email to Vercel KV
         try {
             await kv.set(email, true);

@@ -19,6 +19,8 @@ const signUp = async () => {
 
       if (response.ok) {
         alert('Du er nå på listen! 🚀');
+      } else if (response.status === 422) {
+        alert('Denne e-posten er allerede registrert.');
       } else {
         const errorText = await response.text();
         console.error('Error signing up:', errorText);
