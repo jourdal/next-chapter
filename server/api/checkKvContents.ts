@@ -1,20 +1,20 @@
 import { kv } from '@vercel/kv';
 
-async function checkEmailContents() {
+async function checkKvContents() {
     try {
         const keys = await kv.keys('*');
         const values = await Promise.all(keys.map(key => kv.get(key)));
 
-        const emailContents: { [key: string]: any } = {};
+        const kvContents: { [key: string]: any } = {};
 
         keys.forEach((key, index) => {
-            emailContents[key] = values[index];
+            kvContents[key] = values[index];
         });
 
-        // console.log(emailContents);
+        console.log(kvContents);
     } catch (error) {
 
     }
 }
 
-// checkEmailContents();
+checkKvContents();
