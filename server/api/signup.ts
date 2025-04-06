@@ -29,20 +29,21 @@ export default eventHandler(async (event: H3Event) => {
             throw createError({ statusCode: 500, statusMessage: 'Error storing email' });
         }
 
+        // TODO: Try out another way to send emails
         // Send a confirmation email
-        const msg = {
-            to: email,
-            from: 'contact@nextchapter.space',
-            subject: 'Påmeldingsbekreftelse',
-            text: 'Velkommen til eventyret og takk for at du meldte deg på!',
-        };
+        // const msg = {
+        //     to: email,
+        //     from: 'contact@nextchapter.space',
+        //     subject: 'Påmeldingsbekreftelse',
+        //     text: 'Velkommen til eventyret og takk for at du meldte deg på!',
+        // };
 
-        try {
-            await sgMail.send(msg);
-            return send(event, JSON.stringify({ message: 'Subscription successful' }));
-        } catch (error) {
-            throw createError({ statusCode: 500, statusMessage: 'Error sending email' });
-        }
+        // try {
+        //     await sgMail.send(msg);
+        //     return send(event, JSON.stringify({ message: 'Subscription successful' }));
+        // } catch (error) {
+        //     throw createError({ statusCode: 500, statusMessage: 'Error sending email' });
+        // }
     } else {
         throw createError({ statusCode: 405, statusMessage: 'Method not allowed' });
     }
