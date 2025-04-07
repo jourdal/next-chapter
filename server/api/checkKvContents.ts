@@ -11,10 +11,10 @@ async function checkKvContents() {
             kvContents[key] = values[index];
         });
 
-        console.log(kvContents);
+        // console.log(kvContents);
     } catch (error) {
 
     }
 }
 
-checkKvContents();
+// checkKvContents();
