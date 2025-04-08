@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { ContentItem, Episode} from '~/types/content';
+import { ContentItem, Episode } from '~/types/content';
 
-const { data: podcastEpisodes, error: podcastError } = await useFetch<Episode[]>('/api/podcast')
+const { data: podcastEpisodes, error: podcastError } = await useFetch<Episode[]>('/api/podcast');
 
 const contentItems = ref<ContentItem[]>([]);
 
@@ -13,7 +13,11 @@ if (podcastEpisodes.value) {
       type: 'podcast' as const,
       title: episode.title,
       body: trimmedDescription,
-      publishDate: episode.publishDate,
+      publishDate: new Intl.DateTimeFormat('en-GB', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+      }).format(new Date(episode.publishDate)),
     };
   }));
 }
@@ -34,12 +38,12 @@ const getIcon = computed(() => {
         <VCard
             :prepend-icon="getIcon(item)"
             variant="tonal" :title="item.title"
-            :subtitle="new Date(item.publishDate).toLocaleDateString()"
+            :subtitle="item.publishDate"
             :text="item.body"
         >
-          <template #actions>
-            <VBtn v-if="item.type === 'podcast'" :href="`https://open.spotify.com/show/5HanrQebYK5aBJFeut5Gtm?si=a59bfe86c5084eaa`" variant="tonal">Lytt</VBtn>
-          </template>
+        <template #actions>
+          <VBtn v-if="item.type === 'podcast'" :href="`https://open.spotify.com/show/5HanrQebYK5aBJFeut5Gtm?si=a59bfe86c5084eaa`" variant="tonal">Lytt</VBtn>
+        </template>
         </VCard>
       </div>
     </div>

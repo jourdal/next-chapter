@@ -9,7 +9,7 @@ const menu = ref(false);
 <template>
   <VAppBar :elevation="2" app>
     <template v-slot:prepend>
-      <VAppBarNavIcon @click="drawer = !drawer"></VAppBarNavIcon>
+      <VAppBarNavIcon @click="drawer = !drawer" />
     </template>
 
     <VSpacer />
@@ -32,7 +32,7 @@ const menu = ref(false);
     </VMenu>
   </VAppBar>
 
-  <VNavigationDrawer v-model="drawer" app>
+  <VNavigationDrawer v-model="drawer" app temporary>
     <VList>
       <VListItem>
         <NuxtLink to="/">Forside</NuxtLink>

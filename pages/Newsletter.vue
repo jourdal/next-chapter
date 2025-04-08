@@ -51,6 +51,7 @@ const signup = async () => {
 
 <style scoped>
 .container {
+  align-items: center;
   display: flex;
   flex-direction: column;
   gap: 1rem;
