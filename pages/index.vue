@@ -42,7 +42,15 @@ const getIcon = computed(() => {
             :text="item.body"
         >
         <template #actions>
-          <VBtn v-if="item.type === 'podcast'" :href="`https://open.spotify.com/show/5HanrQebYK5aBJFeut5Gtm?si=a59bfe86c5084eaa`" variant="tonal">Lytt</VBtn>
+          <VBtn
+              v-if="item.type === 'podcast'"
+              :href="`https://open.spotify.com/show/5HanrQebYK5aBJFeut5Gtm?si=a59bfe86c5084eaa`"
+              variant="tonal"
+              target="_blank"
+              rel="noopener noreferrer"
+          >
+            Lytt
+          </VBtn>
         </template>
         </VCard>
       </div>
