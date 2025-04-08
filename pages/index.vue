@@ -5,6 +5,7 @@ import { ContentItem, Episode } from '~/types/content';
 const { data: podcastEpisodes, error: podcastError } = await useFetch<Episode[]>('/api/podcast');
 
 const contentItems = ref<ContentItem[]>([]);
+const expanded = ref<Record<string, boolean>>({});
 
 if (podcastEpisodes.value) {
   contentItems.value.push(...podcastEpisodes.value.map(episode => {
@@ -27,6 +28,10 @@ const getIcon = computed(() => {
     return item.type === 'podcast' ? 'mdi-microphone' : 'mdi-fountain-pen';
   };
 });
+
+const toggleReadMore = (title: string) => {
+  expanded.value[title] = !expanded.value[title];
+};
 </script>
 
 <template>
@@ -37,21 +42,33 @@ const getIcon = computed(() => {
       <div v-for="item in contentItems" :key="item.title" class="episode">
         <VCard
             :prepend-icon="getIcon(item)"
-            variant="tonal" :title="item.title"
+            variant="tonal"
+            :title="item.title"
             :subtitle="item.publishDate"
-            :text="item.body"
         >
-        <template #actions>
-          <VBtn
-              v-if="item.type === 'podcast'"
-              :href="`https://open.spotify.com/show/5HanrQebYK5aBJFeut5Gtm?si=a59bfe86c5084eaa`"
-              variant="tonal"
-              target="_blank"
-              rel="noopener noreferrer"
+          <div
+              class="card-body"
+              :class="{ expanded: expanded[item.title] }"
           >
-            Lytt
-          </VBtn>
-        </template>
+            {{ item.body }}
+          </div>
+          <template #actions>
+            <VBtn
+                variant="tonal"
+                @click="toggleReadMore(item.title)"
+            >
+              {{ expanded[item.title] ? 'Les mindre' : 'Les mer' }}
+            </VBtn>
+            <VBtn
+                v-if="item.type === 'podcast'"
+                :href="`https://open.spotify.com/show/5HanrQebYK5aBJFeut5Gtm?si=a59bfe86c5084eaa`"
+                variant="tonal"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+              Lytt
+            </VBtn>
+          </template>
         </VCard>
       </div>
     </div>
@@ -73,6 +90,18 @@ const getIcon = computed(() => {
       white-space: normal;
     }
   }
+}
+
+.card-body {
+  max-height: 5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: max-height 0.3s ease;
+  padding: 0.5rem 1rem;
+}
+
+.card-body.expanded {
+  max-height: none;
 }
 
 @media (max-width: 600px) {
