@@ -14,11 +14,12 @@ const menu = ref(false);
 
     <VSpacer />
     <VRow>
-      <VCol class="logo-title">
+      <NuxtLink class="logo-title" to="/">
         <img :src=logo width="60" height="60" alt="logo"/>
         <VAppBarTitle class="title" text="NextChapter" />
-      </VCol>
+      </NuxtLink>
     </VRow>
+
 
     <DarkModeToggle class="toggle"/>
   </VAppBar>
