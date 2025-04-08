@@ -32,7 +32,7 @@ const menu = ref(false);
     </VMenu>
   </VAppBar>
 
-  <VNavigationDrawer v-model="drawer" app temporary>
+  <VNavigationDrawer v-model="drawer" temporary>
     <VList>
       <VListItem>
         <NuxtLink to="/">Forside</NuxtLink>
