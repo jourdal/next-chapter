@@ -47,6 +47,7 @@ const signup = async () => {
     <input v-model="mail" type="email" placeholder="perodd.tessem@gmail.com" class="text-field" />
     <VBtn variant="tonal" @click="signup" :disabled="!isEmailValid">Meld deg på</VBtn>
   </VContainer>
+  <VDivider />
 </template>
 
 <style scoped>
