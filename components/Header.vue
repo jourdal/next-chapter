@@ -20,16 +20,7 @@ const menu = ref(false);
       </VCol>
     </VRow>
 
-    <VMenu v-model="menu" offset-y>
-      <template v-slot:activator="{ props }">
-        <v-btn icon="mdi-dots-vertical" variant="text" v-bind="props" />
-      </template>
-      <VList>
-        <VListItem>
-          <DarkModeToggle />
-        </VListItem>
-      </VList>
-    </VMenu>
+    <DarkModeToggle class="toggle"/>
   </VAppBar>
 
   <VNavigationDrawer v-model="drawer" temporary>
@@ -59,5 +50,9 @@ a {
   display: flex;
   font-size: 1.5rem;
   font-weight: bold;
+}
+
+.toggle {
+  padding-right: 0.5rem;
 }
 </style>
