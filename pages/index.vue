@@ -55,6 +55,7 @@ const toggleReadMore = (title: string) => {
           <template #actions>
             <VBtn
                 variant="tonal"
+                rounded="xl"
                 @click="toggleReadMore(item.title)"
             >
               {{ expanded[item.title] ? 'Les mindre' : 'Les mer' }}
@@ -62,6 +63,7 @@ const toggleReadMore = (title: string) => {
             <VBtn
                 v-if="item.type === 'podcast'"
                 variant="tonal"
+                rounded="xl"
                 prepend-icon="mdi-headphones"
                 :href="`https://open.spotify.com/show/5HanrQebYK5aBJFeut5Gtm?si=a59bfe86c5084eaa`"
                 target="_blank"
