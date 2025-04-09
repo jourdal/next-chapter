@@ -3,7 +3,6 @@ import { ref } from 'vue';
 import logo from 'public/logo_no_background.png';
 
 const drawer = ref(false);
-const menu = ref(false);
 </script>
 
 <template>
@@ -24,7 +23,7 @@ const menu = ref(false);
     <DarkModeToggle class="toggle"/>
   </VAppBar>
 
-  <VNavigationDrawer v-model="drawer" temporary>
+  <VNavigationDrawer v-model="drawer" :mobile="false" temporary>
     <VList>
       <VListItem>
         <NuxtLink to="/">Forside</NuxtLink>
