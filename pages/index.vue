@@ -61,8 +61,9 @@ const toggleReadMore = (title: string) => {
             </VBtn>
             <VBtn
                 v-if="item.type === 'podcast'"
-                :href="`https://open.spotify.com/show/5HanrQebYK5aBJFeut5Gtm?si=a59bfe86c5084eaa`"
                 variant="tonal"
+                prepend-icon="mdi-headphones"
+                :href="`https://open.spotify.com/show/5HanrQebYK5aBJFeut5Gtm?si=a59bfe86c5084eaa`"
                 target="_blank"
                 rel="noopener noreferrer"
             >
