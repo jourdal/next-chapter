@@ -13,7 +13,7 @@ const props = defineProps({
 const copyText = async () => {
   try {
     await navigator.clipboard.writeText(props.text);
-    alert('Text copied to clipboard');
+    alert('Email er kopiert til utklippstavlen!');
   } catch (error) {
     console.error('Failed to copy text: ', error);
   }
