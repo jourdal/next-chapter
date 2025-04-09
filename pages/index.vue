@@ -54,8 +54,9 @@ const toggleReadMore = (title: string) => {
           </div>
           <template #actions>
             <VBtn
-                variant="tonal"
+                variant="text"
                 rounded="xl"
+                :prepend-icon="expanded[item.title] ? 'mdi-arrow-up' : 'mdi-arrow-down'"
                 @click="toggleReadMore(item.title)"
             >
               {{ expanded[item.title] ? 'Les mindre' : 'Les mer' }}
