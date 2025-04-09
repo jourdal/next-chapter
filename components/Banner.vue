@@ -5,7 +5,7 @@
 <template>
   <div class="banner">
     <span>Bli med på eventyret – ukentlige oppdateringer rett i innboksen!</span>
-    <VBtn variant="tonal" rounded="xl" :to="{ path: '/newsletter' }" component="NuxtLink">Meld deg på</VBtn>
+    <VBtn variant="tonal" rounded="xl" append-icon="mdi-arrow-right" :to="{ path: '/newsletter' }" component="NuxtLink">Meld deg på</VBtn>
   </div>
 </template>
 
