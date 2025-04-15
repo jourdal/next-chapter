@@ -1,12 +1,9 @@
 import { eventHandler, readBody, H3Event, createError, send } from 'h3';
-import sgMail from '@sendgrid/mail';
 import { kv } from '@vercel/kv';
 
-const sendGridApiKey = process.env.SENDGRID_API_KEY;
+const sparkPostApiKey = process.env.SPARKPOST_API_KEY;
 const kvRestApiUrl = process.env.KV_REST_API_URL;
 const kvRestApiToken = process.env.KV_REST_API_TOKEN;
-
-sgMail.setApiKey(sendGridApiKey);
 
 export default eventHandler(async (event: H3Event) => {
     if (event.node.req.method === 'POST') {
@@ -29,16 +26,27 @@ export default eventHandler(async (event: H3Event) => {
             throw createError({ statusCode: 500, statusMessage: 'Error storing email' });
         }
 
-        // Send a confirmation email
-        const msg = {
-            to: email,
-            from: 'contact@nextchapter.space',
-            subject: 'Påmeldingsbekreftelse',
-            text: 'Velkommen til eventyret og takk for at du meldte deg på!',
+        // Send a confirmation email using SparkPost
+        const sparkPostUrl = 'https://api.eu.sparkpost.com/api/v1/transmissions';
+        const emailData = {
+            content: {
+                from: 'contact@nextchapter.space',
+                subject: 'Påmeldingsbekreftelse',
+                text: 'Velkommen til eventyret og takk for at du meldte deg på!',
+            },
+            recipients: [{ address: email }],
         };
 
         try {
-            await sgMail.send(msg);
+            await fetch(sparkPostUrl, {
+                method: 'POST',
+                headers: {
+                    'Authorization': `${sparkPostApiKey}`,
+                    'Content-Type': 'application/json',
+                } as HeadersInit,
+                body: JSON.stringify(emailData),
+            });
+
             return send(event, JSON.stringify({ message: 'Subscription successful' }));
         } catch (error) {
             throw createError({ statusCode: 500, statusMessage: 'Error sending email' });
