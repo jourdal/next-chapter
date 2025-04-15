@@ -3,6 +3,9 @@ import { ref, computed } from 'vue';
 import { validateEmail } from '~/utils/validateEmail';
 
 const mail = ref('');
+const snackbar = ref(false);
+const snackbarText = ref('');
+const snackbarColor = ref('success');
 
 const isEmailValid = computed(() => validateEmail(mail.value));
 
@@ -18,15 +21,25 @@ const signup = async () => {
       });
 
       if (response.ok) {
-        alert('Du er nå på listen! 🚀');
+        snackbarText.value = 'Du er nå på listen 🚀 husk å sjekke søppelpost!';
+        snackbarColor.value = 'success';
+        snackbar.value = true;
       } else if (response.status === 422) {
-        alert('Denne e-posten er allerede registrert.');
+        snackbarText.value = 'Denne e-posten er allerede registrert.';
+        snackbarColor.value = 'warning';
+        snackbar.value = true;
       } else {
         const errorText = await response.text();
         console.error('Error signing up:', errorText);
+        snackbarText.value = 'Noe gikk galt. Prøv igjen senere.';
+        snackbarColor.value = 'error';
+        snackbar.value = true;
       }
     } catch (error) {
       console.error('Error signing up:', error);
+      snackbarText.value = 'Noe gikk galt. Prøv igjen senere.';
+      snackbarColor.value = 'error';
+      snackbar.value = true;
     }
   }
 };
@@ -47,6 +60,15 @@ const signup = async () => {
     <input v-model="mail" type="email" placeholder="perodd.tessem@gmail.com" class="text-field" />
     <VBtn variant="tonal" rounded="xl" @click="signup" :disabled="!isEmailValid">Meld deg på</VBtn>
   </VContainer>
+
+  <VSnackbar v-model="snackbar" :color="snackbarColor" location="bottom left">
+    <strong>{{ snackbarText }}</strong>
+
+    <template v-slot:actions>
+      <VBtn icon="mdi-close" @click="snackbar = false" />
+    </template>
+  </VSnackbar>
+
   <VDivider />
 </template>
 
