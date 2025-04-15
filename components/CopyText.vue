@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { ref } from 'vue';
+
 const props = defineProps({
   text: {
     type: String,
@@ -10,10 +12,12 @@ const props = defineProps({
   }
 });
 
+const snackbar = ref(false);
+
 const copyText = async () => {
   try {
     await navigator.clipboard.writeText(props.text);
-    alert('Email er kopiert til utklippstavlen!');
+    snackbar.value = true;
   } catch (error) {
     console.error('Failed to copy text: ', error);
   }
@@ -21,9 +25,19 @@ const copyText = async () => {
 </script>
 
 <template>
-  <div @click="copyText" class="container">
-    <VIcon v-if="icon" class="icon">{{ icon }}</VIcon>
-    <span class="text">{{ text }}</span>
+  <div>
+    <div @click="copyText" class="container">
+      <VIcon v-if="icon" class="icon">{{ icon }}</VIcon>
+      <span class="text">{{ text }}</span>
+    </div>
+
+    <VSnackbar v-model="snackbar" color="success" location="bottom left">
+      <strong>contact@nextchapter.space er kopiert til utklippstavlen!</strong>
+
+      <template v-slot:actions>
+        <VBtn icon="mdi-close" @click="snackbar = false" />
+      </template>
+    </VSnackbar>
   </div>
 </template>
 
