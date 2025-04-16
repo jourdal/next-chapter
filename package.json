@@ -21,6 +21,8 @@
     "vue-router": "latest"
   },
   "devDependencies": {
+    "@nuxtjs/robots": "^5.2.10",
+    "@nuxtjs/sitemap": "^7.2.10",
     "vite-plugin-vuetify": "^2.0.4",
     "vuetify": "^3.7.14"
   }

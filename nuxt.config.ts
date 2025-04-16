@@ -1,4 +1,5 @@
 import vuetify from "vite-plugin-vuetify";
+import { defineNuxtConfig } from 'nuxt/config';
 
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
@@ -29,4 +30,16 @@ export default defineNuxtConfig({
       ]
     }
   },
-})
+  modules: ['@nuxtjs/sitemap', '@nuxtjs/robots'],
+  sitemap: <Record<string, any>>{
+    hostname: 'https://www.nextchapter.space',
+    routes: async () => {
+      return ['/', '/newsletter'];
+    },
+  },
+  robots: <Record<string, any>>{
+    UserAgent: '*',
+    Disallow: '/admin',
+    Sitemap: 'https://www.nextchapter.space/sitemap.xml',
+  },
+});
