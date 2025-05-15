@@ -12,10 +12,9 @@
   "dependencies": {
     "@mdi/font": "^7.4.47",
     "@mdi/js": "^7.4.47",
-    "@sendgrid/mail": "^8.1.4",
     "@vercel/kv": "^1.0.1",
     "@vercel/node": "^5.1.5",
-    "nuxt": "^3.14.1592",
+    "nuxt": "^3.16.0",
     "rss-parser": "^3.13.0",
     "vue": "latest",
     "vue-router": "latest"
