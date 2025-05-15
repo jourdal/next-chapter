@@ -47,16 +47,9 @@ const signup = async () => {
 
 <template>
   <VContainer class="container">
-    <h3 class="title">Bli med på eventyret – ukentlige oppdateringer rett i innboksen!</h3>
-    <p>Vi utforsker startup-muligheter, sidehustles og nye måter å skape et enklere og bedre liv på, sammen.</p>
-    <div>
-      <h4>Hver uke deler jeg:</h4>
-      <ul>
-        <li class="bullet-point">Eksklusive innsikter fra prosjektene jeg bygger</li>
-        <li class="bullet-point">Lærdommer og utfordringer fra startup-livet</li>
-        <li class="bullet-point">Muligheten til å bli med på prosjektene – hvis du vil!</li>
-      </ul>
-    </div>
+    <h4 class="title">Du trenger ikke lese bøker, ta kurs eller bruke timer på YouTube. Du trenger bare åpne innboksen.</h4>
+    <p>The Next Chapter Letter gir deg ærlige glimt fra min reise – med lærdommer, feil og små grep du kan teste selv.</p>
+    <p>Ingen filter. Ingen glorifisering. Bare ekte erfaringer om å bygge noe nytt – og leve litt friere på veien.</p>
     <input v-model="mail" type="email" placeholder="perodd.tessem@gmail.com" class="text-field" />
     <VBtn variant="tonal" rounded="xl" @click="signup" :disabled="!isEmailValid">Meld deg på</VBtn>
   </VContainer>
@@ -81,16 +74,7 @@ const signup = async () => {
   justify-content: center;
 
   .title {
-    padding-bottom: 1rem;
-  }
-
-  ul {
-    list-style-position: inside;
-  }
-
-  .bullet-point {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
+    padding-top: 1rem;
   }
 
   .text-field {
