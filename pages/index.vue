@@ -43,13 +43,21 @@ const toggleReadMore = (title: string) => {
   <Banner class="banner" />
   <VContainer class="container">
     <div v-if="podcastError">Noe gikk galt med lasting av podcast episoder 😢</div>
-    <div v-else>
-      <div v-for="item in contentItems" :key="item.title" class="item">
+    <VRow v-else dense>
+      <VCol
+        v-for="item in contentItems"
+        :key="item.title"
+        cols="12"
+        md="6"
+        class="item-col"
+      >
         <VCard
             :prepend-icon="getIcon(item)"
             variant="tonal"
             :title="item.title"
             :subtitle="item.publishDate"
+            class="card"
+            :class="{ expanded: expanded[item.title] }"
         >
           <div
               class="card-body"
@@ -79,8 +87,8 @@ const toggleReadMore = (title: string) => {
             </VBtn>
           </template>
         </VCard>
-      </div>
-    </div>
+      </VCol>
+    </VRow>
   </VContainer>
 </template>
 
@@ -91,26 +99,31 @@ const toggleReadMore = (title: string) => {
   flex-direction: column;
   justify-content: center;
 
-  .item {
-    width: 100%;
-    margin-bottom: 1rem;
+  .item-col {
+    display: flex;
+    margin-bottom: 0.5rem;
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      height: 18rem;
+      transition: max-height 0.3s ease;
+    }
+
+    .card.expanded {
+      height: auto;
+    }
 
     :deep(.v-card-title) {
       white-space: normal;
     }
+
+    .card-body {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding: 0.5rem 1rem;
+    }
   }
-}
-
-.card-body {
-  max-height: 5rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  transition: max-height 0.3s ease;
-  padding: 0.5rem 1rem;
-}
-
-.card-body.expanded {
-  max-height: none;
 }
 
 @media (max-width: 600px) {
