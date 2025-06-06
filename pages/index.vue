@@ -8,19 +8,24 @@ const contentItems = ref<ContentItem[]>([]);
 const expanded = ref<Record<string, boolean>>({});
 
 if (podcastEpisodes.value) {
-  contentItems.value.push(...podcastEpisodes.value.map(episode => {
-    const trimmedDescription = episode.description?.split(/Kontakt/)[0].trim();
-    return {
-      type: 'podcast' as const,
-      title: episode.title,
-      body: trimmedDescription,
-      publishDate: new Intl.DateTimeFormat('en-GB', {
-        day: '2-digit',
-        month: '2-digit',
-        year: 'numeric',
-      }).format(new Date(episode.publishDate)),
-    };
-  }));
+  contentItems.value.push(
+    ...podcastEpisodes.value
+      .sort((a, b) => new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime())
+      .slice(0, 10)
+      .map(episode => {
+        const trimmedDescription = episode.description?.split(/Kontakt/)[0].trim();
+        return {
+          type: 'podcast' as const,
+          title: episode.title,
+          body: trimmedDescription,
+          publishDate: new Intl.DateTimeFormat('en-GB', {
+            day: '2-digit',
+            month: '2-digit',
+            year: 'numeric',
+          }).format(new Date(episode.publishDate)),
+        };
+      })
+  );
 }
 
 const getIcon = computed(() => {
