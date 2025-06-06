@@ -41,7 +41,7 @@ const toggleReadMore = (title: string) => {
 
 <template>
   <Banner class="banner" />
-  <VContainer class="container">
+  <VContainer>
     <div v-if="podcastError">Noe gikk galt med lasting av podcast episoder 😢</div>
     <VRow v-else dense>
       <VCol
@@ -93,36 +93,29 @@ const toggleReadMore = (title: string) => {
 </template>
 
 <style scoped>
-.container {
-  align-items: center;
+.item-col {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  margin-bottom: 0.5rem;
 
-  .item-col {
+  .card {
     display: flex;
-    margin-bottom: 0.5rem;
+    flex-direction: column;
+    height: 18rem;
+    transition: max-height 0.3s ease;
+  }
 
-    .card {
-      display: flex;
-      flex-direction: column;
-      height: 18rem;
-      transition: max-height 0.3s ease;
-    }
+  .card.expanded {
+    height: auto;
+  }
 
-    .card.expanded {
-      height: auto;
-    }
+  :deep(.v-card-title) {
+    white-space: normal;
+  }
 
-    :deep(.v-card-title) {
-      white-space: normal;
-    }
-
-    .card-body {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      padding: 0.5rem 1rem;
-    }
+  .card-body {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0.5rem 1rem;
   }
 }
 
