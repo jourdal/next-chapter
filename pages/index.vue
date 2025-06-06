@@ -39,7 +39,7 @@ const toggleReadMore = (title: string) => {
   <VContainer class="container">
     <div v-if="podcastError">Noe gikk galt med lasting av podcast episoder 😢</div>
     <div v-else>
-      <div v-for="item in contentItems" :key="item.title" class="episode">
+      <div v-for="item in contentItems" :key="item.title" class="item">
         <VCard
             :prepend-icon="getIcon(item)"
             variant="tonal"
@@ -86,7 +86,7 @@ const toggleReadMore = (title: string) => {
   flex-direction: column;
   justify-content: center;
 
-  .episode {
+  .item {
     width: 100%;
     margin-bottom: 1rem;
 
