@@ -34,7 +34,7 @@ export default defineNuxtConfig({
   sitemap: <Record<string, any>>{
     hostname: 'https://www.nextchapter.space',
     routes: async () => {
-      return ['/', '/newsletter'];
+      return ['/', '/newsletter', '/blog'];
     },
   },
   robots: <Record<string, any>>{

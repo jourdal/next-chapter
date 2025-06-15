@@ -31,6 +31,9 @@ const drawer = ref(false);
       <VListItem>
         <NuxtLink to="/newsletter">Nyhetsbrev</NuxtLink>
       </VListItem>
+      <VListItem>
+        <NuxtLink to="/blog">Følelser på tekst</NuxtLink>
+      </VListItem>
     </VList>
   </VNavigationDrawer>
 </template>
