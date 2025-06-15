@@ -4,7 +4,7 @@ import { SpeedInsights } from "@vercel/speed-insights/nuxt"
 import { Analytics } from '@vercel/analytics/nuxt'
 
 useHead({
-  titleTemplate: 'NextChapter',
+  titleTemplate: 'Next Chapter',
   meta: [
     { name: 'description', content: 'Default layout for the NextChapter app' },
   ],
