@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useHead } from 'nuxt/app';
 import { SpeedInsights } from "@vercel/speed-insights/nuxt"
+import { Analytics } from '@vercel/analytics/nuxt'
 
 useHead({
   titleTemplate: 'NextChapter',
@@ -18,5 +19,6 @@ useHead({
     </VMain>
     <Footer />
     <SpeedInsights />
+    <Analytics />
   </VApp>
 </template>
