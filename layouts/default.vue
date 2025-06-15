@@ -1,15 +1,6 @@
-<template>
-  <VApp>
-    <Header />
-    <VMain class="layout-container" >
-      <slot />
-    </VMain>
-    <Footer />
-  </VApp>
-</template>
-
 <script setup lang="ts">
 import { useHead } from 'nuxt/app';
+import { SpeedInsights } from "@vercel/speed-insights/nuxt"
 
 useHead({
   titleTemplate: 'NextChapter',
@@ -18,3 +9,14 @@ useHead({
   ],
 });
 </script>
+
+<template>
+  <VApp>
+    <Header />
+    <VMain class="layout-container" >
+      <slot />
+    </VMain>
+    <Footer />
+    <SpeedInsights />
+  </VApp>
+</template>
