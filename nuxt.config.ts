@@ -30,7 +30,7 @@ export default defineNuxtConfig({
       ]
     }
   },
-  modules: ['@nuxtjs/sitemap', '@nuxtjs/robots', '@nuxt/content'],
+  modules: ['@nuxtjs/sitemap', '@nuxtjs/robots'],
   sitemap: <Record<string, any>>{
     hostname: 'https://www.nextchapter.space',
     routes: async () => {
