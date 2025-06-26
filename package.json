@@ -19,6 +19,7 @@
     "@vercel/speed-insights": "^1.2.0",
     "better-sqlite3": "^11.10.0",
     "nuxt": "^3.17.5",
+    "remark-breaks": "^4.0.0",
     "rss-parser": "^3.13.0",
     "vue": "latest",
     "vue-router": "latest"
