@@ -26,13 +26,22 @@ const drawer = ref(false);
   <VNavigationDrawer v-model="drawer" :mobile="false" temporary>
     <VList>
       <VListItem>
-        <NuxtLink to="/">Forside</NuxtLink>
+        <NuxtLink to="/">Home</NuxtLink>
       </VListItem>
       <VListItem>
-        <NuxtLink to="/newsletter">Nyhetsbrev</NuxtLink>
+        <NuxtLink to="/newsletter">Newsletter</NuxtLink>
       </VListItem>
       <VListItem>
-        <NuxtLink to="/blog">Følelser på tekst</NuxtLink>
+        <NuxtLink to="/blog">Feelings on text</NuxtLink>
+      </VListItem>
+      <VListItem>
+        <NuxtLink to="/podcast">Podcast [In Norwegian]</NuxtLink>
+      </VListItem>
+      <VListItem>
+        <NuxtLink to="/aboutUs">About us</NuxtLink>
+      </VListItem>
+      <VListItem>
+        <NuxtLink to="/feedback">Feedback</NuxtLink>
       </VListItem>
     </VList>
   </VNavigationDrawer>
