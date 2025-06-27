@@ -20,10 +20,19 @@ const { data: blogpost } = await useAsyncData(route.path, () => {
 
   .content {
     white-space: pre-line;
+    width: 100%;
   }
 }
 
 .container :deep(hr) {
   margin: 1rem 0;
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 0.5rem;
+  }
 }
 </style>
