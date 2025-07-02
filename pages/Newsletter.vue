@@ -21,23 +21,23 @@ const signup = async () => {
       });
 
       if (response.ok) {
-        snackbarText.value = 'Du er nå på listen 🚀 husk å sjekke søppelpost!';
+        snackbarText.value = 'You are now subscribed 🚀 remember to check your spam folder!';
         snackbarColor.value = 'success';
         snackbar.value = true;
       } else if (response.status === 422) {
-        snackbarText.value = 'Denne e-posten er allerede registrert.';
+        snackbarText.value = 'This email is already subscribed.';
         snackbarColor.value = 'warning';
         snackbar.value = true;
       } else {
         const errorText = await response.text();
         console.error('Error signing up:', errorText);
-        snackbarText.value = 'Noe gikk galt. Prøv igjen senere.';
+        snackbarText.value = 'Something went wrong. Please try again later.';
         snackbarColor.value = 'error';
         snackbar.value = true;
       }
     } catch (error) {
       console.error('Error signing up:', error);
-      snackbarText.value = 'Noe gikk galt. Prøv igjen senere.';
+      snackbarText.value = 'Something went wrong. Please try again later.';
       snackbarColor.value = 'error';
       snackbar.value = true;
     }
@@ -51,7 +51,7 @@ const signup = async () => {
     <p>The Next Chapter Letter gir deg ærlige glimt fra min reise – med lærdommer, feil og små grep du kan teste selv.</p>
     <p>Ingen filter. Ingen glorifisering. Bare ekte erfaringer om å bygge noe nytt – og leve litt friere på veien.</p>
     <input v-model="mail" type="email" placeholder="perodd.tessem@gmail.com" class="text-field" />
-    <VBtn variant="tonal" rounded="xl" @click="signup" :disabled="!isEmailValid">Meld deg på</VBtn>
+    <VBtn variant="tonal" rounded="xl" @click="signup" :disabled="!isEmailValid">Subscribe</VBtn>
   </VContainer>
 
   <VSnackbar v-model="snackbar" :color="snackbarColor" location="bottom left">

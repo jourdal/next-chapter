@@ -1,11 +1,10 @@
 <script setup lang="ts">
-
 </script>
 
 <template>
   <div class="banner">
-    <span>Bli med på eventyret – ukentlige oppdateringer rett i innboksen!</span>
-    <VBtn variant="tonal" rounded="xl" append-icon="mdi-arrow-right" :to="{ path: '/newsletter' }" component="NuxtLink">Bli med</VBtn>
+    <span>Join the adventure – weekly newsletters straight to your inbox! </span>
+    <VBtn variant="tonal" rounded="xl" append-icon="mdi-arrow-right" :to="{ path: '/newsletter' }" component="NuxtLink">Subscrie</VBtn>
   </div>
 </template>
 
