@@ -26,7 +26,7 @@ const filteredPosts = computed(() => {
       variant="outlined"
       clearable
       hide-details
-      class="search-field"
+      class="search"
   />
 
   <VDivider class="divider"/>
@@ -45,7 +45,7 @@ const filteredPosts = computed(() => {
 </template>
 
 <style scoped>
-.search-field {
+.search {
   margin: 2rem auto;
   max-width: 600px;
 }
@@ -62,6 +62,12 @@ const filteredPosts = computed(() => {
 
   :deep(.v-list-item-title) {
     font-weight: bold;
+  }
+}
+
+@media (max-width: 600px) {
+  .search {
+    margin: 2rem 1rem;
   }
 }
 </style>
