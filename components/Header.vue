@@ -32,7 +32,7 @@ const drawer = ref(false);
         <NuxtLink to="/newsletter">Newsletter</NuxtLink>
       </VListItem>
       <VListItem>
-        <NuxtLink to="/blog">Feelings on text</NuxtLink>
+        <NuxtLink to="/articles">Articles</NuxtLink>
       </VListItem>
       <VListItem>
         <NuxtLink to="/podcast">Podcast [In Norwegian]</NuxtLink>

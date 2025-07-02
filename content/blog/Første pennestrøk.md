@@ -1,3 +1,8 @@
+---
+type: 'blog'
+date: '2023-10-26'
+---
+
 # Et nytt liv, én jævla søndag morgen
 
 *Når tryggheten ligger i å miste inntekt, men beholde nysgjerrighet.*

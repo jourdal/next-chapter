@@ -62,7 +62,7 @@ const signup = async () => {
     </template>
   </VSnackbar>
 
-  <VDivider />
+  <VDivider class="divider" />
 </template>
 
 <style scoped>
@@ -91,5 +91,9 @@ const signup = async () => {
       border-bottom: 2px solid #D83E4E;
     }
   }
+}
+
+.divider {
+  margin: 2rem 0;
 }
 </style>
