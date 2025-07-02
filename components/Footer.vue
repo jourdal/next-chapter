@@ -2,17 +2,17 @@
   <VFooter app>
     <VRow class="footer">
       <VCol class="link-container left">
-        <NuxtLink class="link" to="https://www.instagram.com/VentureVeb">
-          <VIcon class="icon">mdi-instagram</VIcon>
-          <span class="text">VentureVeb</span>
+        <NuxtLink class="link" to="https://open.spotify.com/show/5HanrQebYK5aBJFeut5Gtm?si=a59bfe86c5084eaa">
+          <VIcon class="icon">mdi-spotify</VIcon>
+          <span class="text">Podcast</span>
         </NuxtLink>
       </VCol>
       <VCol class="link-container middle">
         <CopyText class="copy-text" text="contact@nextchapter.space" icon="mdi-email"/>
       </VCol>
       <VCol class="link-container right">
-        <NuxtLink class="link" to="https://www.snapchat.com/add/VentureVeb">
-          <VIcon class="icon">mdi-snapchat</VIcon>
+        <NuxtLink class="link" to="https://www.instagram.com/VentureVeb">
+          <VIcon class="icon">mdi-instagram</VIcon>
           <span class="text">VentureVeb</span>
         </NuxtLink>
       </VCol>
@@ -54,3 +54,5 @@
   }
 }
 </style>
+<script setup lang="ts">
+</script>
