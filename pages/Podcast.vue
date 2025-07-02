@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { ContentItem, Episode } from '~/types/content';
+import { formatDate } from "~/utils/formatDate";
 
 const { data: podcastEpisodes, error: podcastError } = await useFetch<Episode[]>('/api/podcast');
 
@@ -18,11 +19,7 @@ if (podcastEpisodes.value) {
           type: 'podcast' as const,
           title: episode.title,
           body: trimmedDescription,
-          publishDate: new Intl.DateTimeFormat('en-GB', {
-            day: '2-digit',
-            month: '2-digit',
-            year: 'numeric',
-          }).format(new Date(episode.publishDate)),
+          publishDate: formatDate(episode.publishDate),
         };
       })
   );
