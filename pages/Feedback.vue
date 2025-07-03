@@ -4,9 +4,9 @@
 
 <template>
   <VContainer class="container">
-    <p>Do you have feedback, suggestions, or just something you want to share?</p>
-    <p>We really appreciate all feedback!</p>
-    <p>Send us an email at <a href="mailto:contact@nextchapter.space">contact@nextchapter.space</a>.</p>
+    <p class="text">Do you have feedback, suggestions, or just something you want to share?</p>
+    <p class="text">We really appreciate all feedback!</p>
+    <p class="text">Send us an email at <a href="mailto:contact@nextchapter.space">contact@nextchapter.space</a>.</p>
   </VContainer>
 </template>
 
@@ -18,5 +18,6 @@
   justify-content: center;
   min-height: 80vh;
   gap: 0.5rem;
+  text-align: center;
 }
 </style>
