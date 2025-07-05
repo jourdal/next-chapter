@@ -32,7 +32,7 @@ const copyText = async () => {
     </div>
 
     <VSnackbar v-model="snackbar" color="success" location="bottom left">
-      <strong>contact@nextchapter.space er kopiert til utklippstavlen!</strong>
+      <strong>contact@nextchapter.space is copied to the clipboard!</strong>
 
       <template v-slot:actions>
         <VBtn icon="mdi-close" @click="snackbar = false" />
