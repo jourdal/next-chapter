@@ -47,12 +47,19 @@ const signup = async () => {
 
 <template>
   <VContainer class="container">
-    <h4 class="title">Du trenger ikke lese bøker, ta kurs eller bruke timer på YouTube. Du trenger bare åpne innboksen.</h4>
-    <p>The Next Chapter Letter gir deg ærlige glimt fra min reise – med lærdommer, feil og små grep du kan teste selv.</p>
-    <p>Ingen filter. Ingen glorifisering. Bare ekte erfaringer om å bygge noe nytt – og leve litt friere på veien.</p>
-    <input v-model="mail" type="email" placeholder="perodd.tessem@gmail.com" class="text-field" />
-    <VBtn variant="tonal" rounded="xl" @click="signup" :disabled="!isEmailValid">Subscribe</VBtn>
+    <VRow class="row" dense>
+      <VCol cols="12" md="6" class="left-section">
+        <h3>You don’t need to read five books, take a course, or spend hours on YouTube. All you need to do is open your inbox.</h3>
+        <p>The Next Chapter Letter gives you honest glimpses into our journey – the wins, the wrong turns, and the small steps that actually make a difference. No filters. No glorification. Just real, tested experiences from someone building something new and trying to live a little freer along the way.</p>
+        <input v-model="mail" type="email" placeholder="john.doe@email.com" class="text-field" />
+        <VBtn variant="tonal" rounded="xl" @click="signup" :disabled="!isEmailValid">Subscribe</VBtn>
+      </VCol>
+      <VCol cols="12" md="6">
+        <div class="placeholder" />
+      </VCol>
+    </VRow>
   </VContainer>
+
 
   <VSnackbar v-model="snackbar" :color="snackbarColor" location="bottom left">
     <strong>{{ snackbarText }}</strong>
@@ -69,28 +76,37 @@ const signup = async () => {
 .container {
   align-items: center;
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
   justify-content: center;
+  padding-top: 2rem;
 
-  .title {
-    padding-top: 1rem;
-  }
+  .left-section {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 
-  .text-field {
-    width: 100%;
-    max-width: 400px;
-    padding: 0.5rem 0;
-    border: none;
-    border-bottom: 2px solid #ccc;
-    font-size: 1rem;
-    outline: none;
-    transition: border-color 0.3s;
+    .text-field {
+      width: 100%;
+      max-width: 400px;
+      padding: 0.5rem 0;
+      border: none;
+      border-bottom: 2px solid #ccc;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.3s;
 
-    &:focus {
-      border-bottom: 2px solid #D83E4E;
+      &:focus {
+        border-bottom: 2px solid #D83E4E;
+      }
     }
   }
+
+  .placeholder {
+    border: solid;
+    padding: 1rem;
+    height: 100%
+  }
+
 }
 
 .divider {
