@@ -55,7 +55,6 @@ const signup = async () => {
         <VBtn variant="tonal" rounded="xl" @click="signup" :disabled="!isEmailValid">Subscribe</VBtn>
       </VCol>
       <VCol cols="12" md="6">
-        <div class="placeholder" />
       </VCol>
     </VRow>
   </VContainer>
@@ -100,13 +99,6 @@ const signup = async () => {
       }
     }
   }
-
-  .placeholder {
-    border: solid;
-    padding: 1rem;
-    height: 100%
-  }
-
 }
 
 .divider {
