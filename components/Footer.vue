@@ -4,7 +4,7 @@
       <VCol class="link-container left">
         <NuxtLink class="link" to="https://open.spotify.com/show/5HanrQebYK5aBJFeut5Gtm?si=a59bfe86c5084eaa">
           <VIcon class="icon">mdi-spotify</VIcon>
-          <span class="text">Podcast</span>
+          <span class="text">Podcast [Norwegian]</span>
         </NuxtLink>
       </VCol>
       <VCol class="link-container middle">
