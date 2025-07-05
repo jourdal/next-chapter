@@ -52,7 +52,9 @@
   .text {
     display: none;
   }
+
+  :deep(.text) {
+    display: none;
+  }
 }
 </style>
-<script setup lang="ts">
-</script>

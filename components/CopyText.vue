@@ -51,10 +51,4 @@ const copyText = async () => {
     margin-right: 0.5rem;
   }
 }
-
-@media (max-width: 600px) {
-  .text {
-    display: none;
-  }
-}
 </style>
