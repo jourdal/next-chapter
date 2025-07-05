@@ -6,7 +6,7 @@
   <VContainer class="container">
     <p class="text">Do you have feedback, suggestions, or just something you want to share?</p>
     <p class="text">We really appreciate all feedback!</p>
-    <CopyText class="copy-text" text="Send us an email at contact@nextchapter.space" />
+    <span>Send us an email at <CopyText class="copy-text" text="contact@nextchapter.space" />.</span>
   </VContainer>
 </template>
 
@@ -19,5 +19,9 @@
   min-height: 80vh;
   gap: 0.5rem;
   text-align: center;
+
+  .copy-text {
+    display: inline-flex;
+  }
 }
 </style>
